@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMMC Security Auditor Toolkit</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1, h2 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        code { background-color: #f9f9f9; padding: 2px 4px; }
+    </style>
+</head>
+<body>
+
+<h1>CMMC Security Auditor Toolkit</h1>
+<p>A lightweight, on-premises-friendly PowerShell toolkit that performs automated security audits of Microsoft stack environments to support <strong>CMMC Level 2</strong> technical controls.</p>
+
+<hr>
+
+<h2>✨ What This Tool Does</h2>
+<p>This toolkit audits:</p>
+<ul>
+    <li><strong>IIS Web Servers</strong></li>
+    <li><strong>Microsoft SQL Server Instances</strong></li>
+    <li><strong>Windows Operating Systems</strong></li>
+</ul>
+<p>It generates easy-to-read <strong>HTML reports</strong> summarizing security findings mapped to CMMC Level 2 requirements.</p>
+<p>No installation required. All scripts are local-only. No cloud dependencies.</p>
+
+<hr>
+
+<h2>🔍 Summary of What is Audited</h2>
+
+<h3>IIS (Internet Information Services)</h3>
+<ul>
+    <li>HTTPS Redirect enforced</li>
+    <li>HSTS (HTTP Strict Transport Security) headers</li>
+    <li>TLS 1.2 enabled, TLS 1.0 disabled</li>
+    <li>IIS Logging enabled</li>
+    <li>applicationHost.config file permissions</li>
+</ul>
+
+<h3>Microsoft SQL Server</h3>
+<ul>
+    <li>'sa' account disabled</li>
+    <li>Transparent Data Encryption (TDE) enabled on databases</li>
+    <li>Recent backups are encrypted</li>
+    <li>Detection of elevated SQL logins</li>
+    <li>SQL Server Audit configuration validated</li>
+</ul>
+
+<h3>Windows Server / Windows OS</h3>
+<ul>
+    <li>Audit Policy settings</li>
+    <li>Windows Firewall profile status</li>
+    <li>Account Lockout Policy (threshold, duration, window)</li>
+</ul>
+
+<hr>
+
+<h2>📋 Deliverables</h2>
+<ul>
+    <li>Clear <strong>HTML Audit Report</strong></li>
+    <li><strong>CMMC Control Mapping</strong> table</li>
+    <li>Raw <strong>JSON Output</strong> for technical evidence</li>
+</ul>
+
+<hr>
+
+<h2>🛡️ CMMC Level 2 Controls Supported</h2>
+
+<table>
+<tr><th>CMMC Practice</th><th>Area</th></tr>
+<tr><td>AC.L1-3.1.1</td><td>Enforce access control (HTTPS, firewalls)</td></tr>
+<tr><td>AC.L2-3.1.2</td><td>Account lockout policies</td></tr>
+<tr><td>IA.L1-3.5.2</td><td>Identification and authentication of users (SQL sa account, secure logins)</td></tr>
+<tr><td>SC.L2-3.13.8</td><td>TLS encryption of transmitted data</td></tr>
+<tr><td>SC.L2-3.13.11</td><td>Protection of data at rest (SQL TDE, backup encryption)</td></tr>
+<tr><td>AU.L2-3.3.1</td><td>Audit log generation (Windows, SQL
